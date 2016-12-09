@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@mainColor:#22AC39;/*变量*/
+a{
+  color: #333;
+}
+a:hover{
+  color:@mainColor;
+
+}
+//双斜杠的注释不会编译
+//.red {
+//  color:@mainColor;
+//
+//}
+//.red-border {
+//  border: 1px solid @mainColor;
+//}
+/*mixin混入--start*/
+.redFont-redBorder {
+  .red();
+  .red-border();
+  .border-radius(20px);
+}
+.red(){
+  color: @mainColor;
+}
+
+.border-radius(@radius:10px){
+  border-radius: @radius;
+}
+/*mixin混入--end*/
+
+/*嵌套--start*/
+div {
+  margin: 0 auto;
+  a {
+    color: #000;
+  }
+  > .clearfix {
+    clear: right;
+     span {
+       width: 100px;
+       +span {
+         height: 100%;
+       }
+     }
+    &:hover{
+      width: 50px;
+      img {
+        width: 100px;
+      }
+    }
+  }
+
+}
+/*嵌套--end*/
+
+//导入---模块化
+@import "func";
+
+//内置函数
+.layout {
+  color: lighten(@mainColor,50%);
+}

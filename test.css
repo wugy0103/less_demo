@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/*变量*/
+a {
+  color: #333;
+}
+a:hover {
+  color: #22AC39;
+}
+/*mixin混入--start*/
+.redFont-redBorder {
+  color: #22AC39;
+  border: 1px solid #22AC39;
+  border-radius: 20px;
+}
+/*mixin混入--end*/
+/*嵌套--start*/
+div {
+  margin: 0 auto;
+}
+div a {
+  color: #000;
+}
+div > .clearfix {
+  clear: right;
+}
+div > .clearfix span {
+  width: 100px;
+}
+div > .clearfix span + span {
+  height: 100%;
+}
+div > .clearfix:hover {
+  width: 50px;
+}
+div > .clearfix:hover img {
+  width: 100px;
+}
+/*嵌套--end*/
+b {
+  height: 100px;
+}
+.layout {
+  color: #d6f7dc;
+}
